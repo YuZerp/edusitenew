@@ -40,7 +40,7 @@ export default function RequestModal({ isOpen, onClose, preselectedSubject = '' 
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('http://localhost:8000/api/applications/', {
+            const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/api/applications/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
